@@ -1,15 +1,28 @@
-describe('factorial', function() {
-  it('returns 1 when zero is entered', function() {
-    factorial("0").should.equal(1);
+describe("Address", function() {
+  describe("fullAddress", function() {
+    it("returns the full address with nice formatting", function() {
+      var testAddress = Object.create(Address);
+      testAddress.street = "123 4th Ave";
+      testAddress.city = "Portland";
+      testAddress.state = "Oregon";
+      testAddress.fullAddress().should.equal("123 4th Ave, Portland, Oregon");
+    });
   });
-  it('multiplies a number by all of the positive integers less than that number', function() {
-    factorial("5").should.equal(120);
-  });
-  it('returns false for any negative number ', function() {
-    factorial("-1").should.equal(false);
-  });
-  it('returns false for any noninteger', function() {
-    factorial("5.2").should.equal(false);
-  });
+  describe('validAddress', function(){
+    it('prevents form submission if address is not valid', function(){
+      var testAddress = Object.create(Address);
+      testAddress.street = "";
+      testAddress.city = "Portland";
+      testAddress.state = "Oregon";
+      testAddress.validAddress().should.equal(false)
+    })
+  })
 });
 
+describe('validNumber', function() {
+  it('prevents contact creation if phone number is not 10 digits long', function() {
+    var testNumber = Object.create(PhoneNumber);
+    testNumber.inputtedNumber = 123456;
+    testNumber.validNumber().should.equal(false)
+  });
+});

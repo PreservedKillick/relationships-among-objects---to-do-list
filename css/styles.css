@@ -1,0 +1,10 @@
+#show-contact{
+  display:none;
+}
+
+#contacts{
+  color:blue;
+}
+#contacts:hover{
+  text-decoration: underline;
+}
