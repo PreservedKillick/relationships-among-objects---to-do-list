@@ -1,10 +1,5 @@
-#show-contact{
-  display:none;
-}
-
-#contacts{
-  color:blue;
-}
-#contacts:hover{
-  text-decoration: underline;
+ul{
+  list-style: none; 
+  font-size: 25px;
+  padding-left: 0;
 }
