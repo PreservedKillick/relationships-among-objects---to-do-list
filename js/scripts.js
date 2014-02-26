@@ -20,8 +20,6 @@ $(document).ready(function() {
   lols.lists[lols.lists.length-1].name = $('input#newList').val();
   newList.items = [];
   
- 
-
   $('#listOfLists ul').html('')
   lols.lists.forEach(function(list){
     $('#listOfLists ul').append('<li>' + list.name + '</li>');
@@ -35,9 +33,6 @@ $(document).ready(function() {
       })
     });
   }); 
-
-
-
 
   $('form#newListItem').submit(function(event) {
   event.preventDefault();
